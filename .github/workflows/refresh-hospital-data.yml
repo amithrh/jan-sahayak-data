@@ -1,0 +1,82 @@
+# Nightly copy of the NHA empanelled hospital directory, published to GitHub Pages.
+# The Jan Sahayak site (lib/local-directory.ts) reads https://<owner>.github.io/<repo>/data,
+# so a refresh does not need a site redeploy. If any step fails, Pages keeps serving the
+# previous day's data.
+name: Refresh hospital data
+
+on:
+  schedule:
+    - cron: "30 20 * * *" # 02:00 IST
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: refresh-hospital-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Earlier snapshots let the sync write changes.json and let the build reject a sudden drop.
+      - name: Restore previous snapshots
+        uses: actions/cache/restore@v4
+        with:
+          path: .data/nha-hospitals
+          key: nha-hospitals-${{ github.run_id }}
+          restore-keys: nha-hospitals-
+
+      - name: Copy NHA hospital directory
+        run: node scripts/sync-nha-hospitals.mjs --out .data/nha-hospitals
+
+      - name: Keep only the last two snapshots
+        run: |
+          cd .data/nha-hospitals
+          ls -d 20??-??-?? | sort | head -n -2 | xargs -r rm -rf
+          for dir in 20??-??-??; do rm -rf "$dir/states"; done
+
+      - name: Build site data
+        run: node scripts/build-site-data.mjs --data .data --out .pages/data
+
+      - name: Summarise
+        run: |
+          node -e '
+            const m = require("./.pages/data/meta.json");
+            const c = (() => { try { return require("./.pages/data/changes.json"); } catch { return null; } })();
+            const lines = [
+              `### NHA directory ${m.snapshotDate}`,
+              `${m.hospitals} unique hospitals (${m.locatedHospitals} with map locations); NHA reports ${m.nhaReportedTotal}.`,
+              c ? `Since ${c.comparedWith}: ${c.added.length} added, ${c.removed.length} removed, ${c.changed.length} changed.` : "No earlier snapshot to compare.",
+            ];
+            require("fs").appendFileSync(process.env.GITHUB_STEP_SUMMARY, lines.join("\n\n") + "\n");
+          '
+
+      - name: Save snapshots
+        if: success()
+        uses: actions/cache/save@v4
+        with:
+          path: .data/nha-hospitals
+          key: nha-hospitals-${{ github.run_id }}
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .pages
+
+      - id: deploy
+        uses: actions/deploy-pages@v4

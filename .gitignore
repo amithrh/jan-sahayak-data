@@ -1,0 +1,6 @@
+# Working data: raw NHA snapshots and built Pages files
+/.data/
+/.pages/
+# PIN source files are large and rebuilt rarely; see README
+/sources/
+.DS_Store
