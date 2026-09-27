@@ -20,13 +20,15 @@ Hospital rows are arrays: `[facilityId, name, address, phone, type (G/P), lat, l
 
 ## Nightly refresh
 
-`.github/workflows/refresh-hospital-data.yml` runs at 02:00 IST (and on demand from the Actions tab):
+NHA refuses requests from GitHub Actions and Cloudflare (HTTP 403), so the refresh runs on a machine in India that NHA accepts. `scripts/nightly-refresh.sh`:
 
-1. `scripts/sync-nha-hospitals.mjs` copies the NHA HEM directory state by state (about 4,000 requests at a polite rate) and checks each state's count against NHA's own total.
+1. `scripts/sync-nha-hospitals.mjs` copies the NHA HEM directory state by state (about 4,000 requests at a polite rate, 35–70 minutes) and checks each state's count against NHA's own total.
 2. `scripts/build-site-data.mjs` builds the files above. It refuses to publish a snapshot with an incomplete state or with more than 5% fewer hospitals than the previous one.
-3. The files are deployed to GitHub Pages. If any step fails, Pages keeps serving the previous day's data.
+3. The files are force-pushed as a single commit to the `gh-pages` branch, which GitHub Pages serves. If any step fails, Pages keeps the previous day's data.
 
-The previous snapshot is kept in the Actions cache so each run can report changes. NHA lists some hospitals twice; unique hospitals (39,568 on 27 September 2026) are fewer than NHA's reported total (40,204).
+The last two snapshots stay in `.data/nha-hospitals` so each run can report changes. NHA lists some hospitals twice; unique hospitals (39,568 on 27 September 2026) are fewer than NHA's reported total (40,204).
+
+On macOS the script is scheduled by a launchd agent at 02:00 local time (`~/Library/LaunchAgents/com.amitmishra.jan-sahayak-refresh.plist`), wrapped in `caffeinate -i` so the Mac does not sleep mid-run. If the Mac is asleep at 02:00, launchd runs the job when it wakes; if it is shut down, that night is skipped. Logs: `~/Library/Logs/jan-sahayak-refresh.log`. On a Linux server, a cron entry such as `30 2 * * * /path/to/jan-sahayak-data/scripts/nightly-refresh.sh >> refresh.log 2>&1` does the same.
 
 ## PIN code locations
 
@@ -41,6 +43,7 @@ It reads `sources/indiapost-pincode.csv` (India Post "All India Pincode director
 ## Local use
 
 ```bash
+scripts/nightly-refresh.sh               # full refresh and publish
 node scripts/sync-nha-hospitals.mjs      # writes .data/nha-hospitals/<date>/
 node scripts/build-site-data.mjs         # writes .pages/data/
 node scripts/nearby-hospitals.mjs 560098 --radius 5 --type G
