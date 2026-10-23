@@ -1,0 +1,459 @@
+{
+ "comparedWith": "2026-10-23",
+ "added": [
+  "HOSP5P189020",
+  "HOSP9P26254585",
+  "HOSP9P26142778",
+  "HOSP24G26253635",
+  "HOSP27P209751"
+ ],
+ "removed": [],
+ "changed": [
+  {
+   "facilityId": "HOSP5G02331",
+   "fields": [
+    "specialityCode"
+   ]
+  },
+  {
+   "facilityId": "HOSP5P161666",
+   "fields": [
+    "hospName",
+    "hospAddress"
+   ]
+  },
+  {
+   "facilityId": "HOSP3P92207",
+   "fields": [
+    "hospName",
+    "hospContactNumber",
+    "hospLatitude",
+    "hospLongitude"
+   ]
+  },
+  {
+   "facilityId": "HOSP3P201653",
+   "fields": [
+    "specialityCode"
+   ]
+  },
+  {
+   "facilityId": "HOSP3P26213646",
+   "fields": [
+    "specialityCode"
+   ]
+  },
+  {
+   "facilityId": "HOSP3P26290553",
+   "fields": [
+    "specialityCode"
+   ]
+  },
+  {
+   "facilityId": "HOSP7P26139949",
+   "fields": [
+    "specialityCode"
+   ]
+  },
+  {
+   "facilityId": "HOSP98G111990",
+   "fields": [
+    "hospLatitude"
+   ]
+  },
+  {
+   "facilityId": "HOSP37P72857",
+   "fields": [
+    "hospName"
+   ]
+  },
+  {
+   "facilityId": "HOSP6P02352",
+   "fields": [
+    "deempanelStatus"
+   ]
+  },
+  {
+   "facilityId": "HOSP6P03431",
+   "fields": [
+    "deempanelStatus"
+   ]
+  },
+  {
+   "facilityId": "HOSP6P04275",
+   "fields": [
+    "deempanelStatus"
+   ]
+  },
+  {
+   "facilityId": "HOSP6P14086",
+   "fields": [
+    "deempanelStatus"
+   ]
+  },
+  {
+   "facilityId": "HOSP6P32461",
+   "fields": [
+    "deempanelStatus"
+   ]
+  },
+  {
+   "facilityId": "HOSP6P89911",
+   "fields": [
+    "deempanelStatus"
+   ]
+  },
+  {
+   "facilityId": "HOSP6P124273",
+   "fields": [
+    "deempanelStatus"
+   ]
+  },
+  {
+   "facilityId": "HOSP6G177340",
+   "fields": [
+    "hospLatitude",
+    "hospLongitude"
+   ]
+  },
+  {
+   "facilityId": "HOSP8P104203",
+   "fields": [
+    "hospName",
+    "hospAddress",
+    "hospLatitude",
+    "hospLongitude"
+   ]
+  },
+  {
+   "facilityId": "HOSP10P25244363",
+   "fields": [
+    "specialityCode"
+   ]
+  },
+  {
+   "facilityId": "HOSP10P26265863",
+   "fields": [
+    "hospName",
+    "specialityCode"
+   ]
+  },
+  {
+   "facilityId": "HOSP13G25130299",
+   "fields": [
+    "specialityCode"
+   ]
+  },
+  {
+   "facilityId": "HS13006007",
+   "fields": [
+    "hospContactNumber"
+   ]
+  },
+  {
+   "facilityId": "HOSP13G173446",
+   "fields": [
+    "specialityCode"
+   ]
+  },
+  {
+   "facilityId": "HOSP18P69913",
+   "fields": [
+    "specialityCode"
+   ]
+  },
+  {
+   "facilityId": "HOSP19P26188509",
+   "fields": [
+    "specialityCode"
+   ]
+  },
+  {
+   "facilityId": "HOSP19P26141068",
+   "fields": [
+    "specialityCode"
+   ]
+  },
+  {
+   "facilityId": "HOSP19P26203561",
+   "fields": [
+    "specialityCode"
+   ]
+  },
+  {
+   "facilityId": "HOSP19P26171381",
+   "fields": [
+    "specialityCode"
+   ]
+  },
+  {
+   "facilityId": "HOSP19G26233028",
+   "fields": [
+    "specialityCode"
+   ]
+  },
+  {
+   "facilityId": "HOSP19P26195123",
+   "fields": [
+    "specialityCode"
+   ]
+  },
+  {
+   "facilityId": "HOSP19P26158290",
+   "fields": [
+    "specialityCode"
+   ]
+  },
+  {
+   "facilityId": "HOSP9P25256425",
+   "fields": [
+    "deempanelStatus"
+   ]
+  },
+  {
+   "facilityId": "HOSP9P147972",
+   "fields": [
+    "hospLatitude",
+    "hospLongitude"
+   ]
+  },
+  {
+   "facilityId": "HOSP9P148904",
+   "fields": [
+    "hospName",
+    "specialityCode"
+   ]
+  },
+  {
+   "facilityId": "HOSP9P157414",
+   "fields": [
+    "deempanelStatus"
+   ]
+  },
+  {
+   "facilityId": "HOSP9P170655",
+   "fields": [
+    "deempanelStatus"
+   ]
+  },
+  {
+   "facilityId": "HOSP9P179027",
+   "fields": [
+    "deempanelStatus"
+   ]
+  },
+  {
+   "facilityId": "HOSP21P110636",
+   "fields": [
+    "specialityCode"
+   ]
+  },
+  {
+   "facilityId": "HOSP22P26236569",
+   "fields": [
+    "specialityCode"
+   ]
+  },
+  {
+   "facilityId": "HOSP23P26127879",
+   "fields": [
+    "hospLatitude",
+    "hospLongitude"
+   ]
+  },
+  {
+   "facilityId": "HOSP23P25133877",
+   "fields": [
+    "deempanelStatus"
+   ]
+  },
+  {
+   "facilityId": "HOSP23G25145998",
+   "fields": [
+    "specialityCode"
+   ]
+  },
+  {
+   "facilityId": "HOSP23P25168620",
+   "fields": [
+    "deempanelStatus"
+   ]
+  },
+  {
+   "facilityId": "HOSP23G70842",
+   "fields": [
+    "deempanelStatus"
+   ]
+  },
+  {
+   "facilityId": "HOSP23P82256",
+   "fields": [
+    "hospName"
+   ]
+  },
+  {
+   "facilityId": "HOSP23P100402",
+   "fields": [
+    "specialityCode"
+   ]
+  },
+  {
+   "facilityId": "HOSP23G127582",
+   "fields": [
+    "deempanelStatus"
+   ]
+  },
+  {
+   "facilityId": "HOSP23G127599",
+   "fields": [
+    "deempanelStatus"
+   ]
+  },
+  {
+   "facilityId": "HOSP23P142249",
+   "fields": [
+    "deempanelStatus"
+   ]
+  },
+  {
+   "facilityId": "HOSP24P06072",
+   "fields": [
+    "specialityCode"
+   ]
+  },
+  {
+   "facilityId": "HOSP24G51677",
+   "fields": [
+    "specialityCode"
+   ]
+  },
+  {
+   "facilityId": "HS24014118",
+   "fields": [
+    "specialityCode"
+   ]
+  },
+  {
+   "facilityId": "HS24019096",
+   "fields": [
+    "hospAddress",
+    "specialityCode",
+    "hospLatitude",
+    "hospLongitude"
+   ]
+  },
+  {
+   "facilityId": "HOSP24P145117",
+   "fields": [
+    "specialityCode"
+   ]
+  },
+  {
+   "facilityId": "HOSP24P168618",
+   "fields": [
+    "hospName",
+    "hospAddress"
+   ]
+  },
+  {
+   "facilityId": "HOSP24G199088",
+   "fields": [
+    "specialityCode"
+   ]
+  },
+  {
+   "facilityId": "HOSP27P26120840",
+   "fields": [
+    "hospName"
+   ]
+  },
+  {
+   "facilityId": "HOSP27G25268698",
+   "fields": [
+    "hospName"
+   ]
+  },
+  {
+   "facilityId": "HOSP27P122238",
+   "fields": [
+    "specialityCode"
+   ]
+  },
+  {
+   "facilityId": "HOSP27G26153034",
+   "fields": [
+    "hospName",
+    "specialityCode"
+   ]
+  },
+  {
+   "facilityId": "HOSP27P26165298",
+   "fields": [
+    "hospName"
+   ]
+  },
+  {
+   "facilityId": "HOSP32G92913",
+   "fields": [
+    "specialityCode"
+   ]
+  },
+  {
+   "facilityId": "HOSP29G87349",
+   "fields": [
+    "hospName",
+    "hospAddress",
+    "hospLatitude",
+    "hospLongitude"
+   ]
+  },
+  {
+   "facilityId": "HOSP29G87351",
+   "fields": [
+    "hospName"
+   ]
+  },
+  {
+   "facilityId": "HOSP29G87509",
+   "fields": [
+    "hospName"
+   ]
+  },
+  {
+   "facilityId": "HOSP29G87582",
+   "fields": [
+    "hospName"
+   ]
+  },
+  {
+   "facilityId": "HOSP29G87838",
+   "fields": [
+    "hospName",
+    "hospAddress",
+    "hospLatitude",
+    "hospLongitude"
+   ]
+  },
+  {
+   "facilityId": "HOSP29P111469",
+   "fields": [
+    "hospName"
+   ]
+  },
+  {
+   "facilityId": "HOSP29P164590",
+   "fields": [
+    "hospContactNumber"
+   ]
+  },
+  {
+   "facilityId": "HOSP29P211089",
+   "fields": [
+    "hospName",
+    "hospAddress",
+    "hospLatitude",
+    "hospLongitude"
+   ]
+  }
+ ]
+}
