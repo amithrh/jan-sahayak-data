@@ -1,0 +1,17 @@
+{
+ "snapshotDate": "2026-11-28",
+ "fetchedFrom": "NHA Hospital Engagement Module (hem.nha.gov.in)",
+ "fetchStartedAt": "2026-11-27T20:30:05.058Z",
+ "fetchFinishedAt": "2026-11-27T21:07:38.085Z",
+ "hospitals": 39802,
+ "locatedHospitals": 38300,
+ "nhaReportedTotal": 40490,
+ "pincodes": 19334,
+ "pincodeSources": {
+  "indiapost": "India Post All India Pincode directory with latitude and longitude (data.gov.in OGD)",
+  "geonames": "GeoNames postal codes (https://download.geonames.org/export/zip/), CC-BY 4.0; fills PINs without India Post coordinates"
+ },
+ "pincodesBuiltAt": "2026-09-27T12:20:39.146Z",
+ "tileDegrees": 0.5,
+ "builtAt": "2026-11-27T21:07:38.571Z"
+}
